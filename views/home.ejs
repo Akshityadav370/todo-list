@@ -69,7 +69,7 @@
                                     
                                 </div>
                             </div>
-                            <div class="update-details hide">
+                            <div class="update-details" style="display: none;">
                                 <form action="/update-task/?id=<%= i._id %>" method="post">
                                     <input type="text" name="task" placeholder="Task.." required>
                                     <select name="category" required>
@@ -112,8 +112,11 @@
 
         // }p
         function displayDiv(){
-            var updateDiv = document.querySelector('.update-details');
-            updateDiv.style.display = 'block';
+            const updateDivs = document.querySelectorAll('.update-details');
+            // updateDiv.style.display = 'block';
+            updateDivs.forEach((updateItem) => {
+                updateItem.style.display = 'block';
+            })
         }
     </script>
 </body>
